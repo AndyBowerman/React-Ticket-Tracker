@@ -1,4 +1,40 @@
+@use '../assets/sass/variables' as *;
+
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 700px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: 1350px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: 1700px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+    }
 }

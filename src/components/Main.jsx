@@ -2,23 +2,15 @@ import React from 'react';
 import Card from './Card/Card';
 import './Main.scss';
 
-const Main = () => {
-    // logic to map cards for each employee
+
+const Main = (props) => {
+  
+  const{teamInfo} = props;
+  const infoCards = teamInfo.map(employee => <Card name={employee.name} role={employee.role} key={employee.id} />)
 
   return (
     <div className="card-container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {infoCards}
     </div>
   )
 }

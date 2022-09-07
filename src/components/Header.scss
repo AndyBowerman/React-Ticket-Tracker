@@ -1,5 +1,7 @@
+@use '../assets/sass/variables' as *;
+
 .header {
     padding: 30px;
     text-align: center;
-    font-size: 24px;
+    font-size: $font-size-large;
 }

@@ -1,17 +1,41 @@
 @use '../../assets/sass/variables' as *;
 
 .card {
-    padding: 15px;
-    margin: 16px;
-    border-radius: 5px;
-    background-color: $color-black;
+    margin: 10px;
     color: $color-white;
     width: 80%;
     min-width: 220px;
     max-width: 300px;
     height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     &__header {
-        font-size: $font-size-medium;
+        position: absolute;
+        z-index:1;
+        padding: 20px;
+        text-align: center;
+
+        &--name {
+            font-size: $font-size-medium;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        background-color: $color-black;
+        opacity: 0.6;
+        position: absolute;
+        border-radius: 5px;
     }
 }

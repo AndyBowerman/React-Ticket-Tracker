@@ -1,8 +1,7 @@
 @use '../../assets/sass/variables' as *;
 
 .counter {
-    background-color: $color-white;
-    color: $color-black;
+    color: $color-white;
     width: 80%;
     padding: 10px;
     display: flex;
@@ -11,7 +10,10 @@
     align-items: center;
     margin: 25px auto;
     border-radius: 5px;
-    font-size: $font-size-medium;
+    font-size: $font-size-large;
+    position: absolute;
+    z-index: 1;
+    padding-top: 80px;
 
     &__header {
         font-size: 18px;
@@ -29,8 +31,9 @@
         width: 40px;
         height: 40px;
         border-radius: 10px;
-        background-color: #3b3e79;
-        color: white;
+        background-color: $color-primary;
+        color: $color-black;
         margin: 10px;
+        font-size: $font-size-medium;
     }
 }

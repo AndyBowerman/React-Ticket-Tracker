@@ -5,8 +5,8 @@ import './Main.scss';
 
 const Main = (props) => {
   
-  const{teamInfo} = props;
-  const infoCards = teamInfo.map(employee => <Card name={employee.name} role={employee.role} key={employee.id} />)
+  const{teamInfo, img} = props;
+  const infoCards = teamInfo.map(employee => <Card name={employee.name} role={employee.role} key={employee.id} img={img} />)
 
   return (
     <div className="card-container">

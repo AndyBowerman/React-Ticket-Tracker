@@ -4,13 +4,17 @@ import './Card.scss';
 
 const Card = (props) => {
 
-  const {name, role, id} = props;
+  const {name, role, id, img} = props;
 
   return (
     <div key={id} className="card">
-        <h3 className="card__header">Name: {name}</h3>
-        <h3 className="card__header">Role: {role}</h3>
-        <Counter />
+      <div className="card__header">
+        <h3 className='card__header--name'>{name}</h3>
+        <p>{role}</p>
+      </div>        
+      <img className="card__image" src={img} alt="Coding background" />
+      <Counter />
+      <div className="card__overlay"></div>
     </div>
   )
 }

@@ -13,11 +13,27 @@ const App = () => {
     setData([...data, {id: data.length + 1, name: userName, role: jobTitle}])
   }
 
-
+  const searchUser = (userName, jobTitle) => {
+    setData([...data].filter(employee => {
+      if(userName && jobTitle) {
+        if(employee.name.toLowerCase() == userName.toLowerCase() && jobTitle.toLowerCase() == employee.role.toLowerCase()) {
+          return employee;
+        }
+      } else if(userName) {
+        if(employee.name.toLowerCase() == userName) {
+          return employee;
+        }
+      } else if(jobTitle) {
+        if(employee.role.toLowerCase() == jobTitle.toLowerCase()) {
+          return employee;
+        }
+      }
+    }))
+  }
 
   return (
     <div className="app">
-      <Header createUser={createUser} />
+      <Header createUser={createUser} searchUser={searchUser} />
       <Main teamInfo={data} img={codingImg} />
     </div>
   );

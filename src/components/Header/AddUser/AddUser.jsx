@@ -3,19 +3,6 @@ import './AddUser.scss';
 
 const AddUser = (props) => {
 
-/*
-Like the projects, not keen on double lessons
-Like the lessons, code alongs make them much better
-Challenges break up the lessons make them more interactive
-
-
-
-*/
-
-
-
-
-
   const {createUser} = props;
 
   // Expand and hide the input boxes.

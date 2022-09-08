@@ -3,7 +3,7 @@ import './SearchUser.scss';
 
 const SearchUser = () => {
 
-  const [expandSearchUser, setExpandSearchUser] = useState(true);
+  const [expandSearchUser, setExpandSearchUser] = useState(false);
 
   const handleSearchUserClick = () => setExpandSearchUser(!expandSearchUser);
 

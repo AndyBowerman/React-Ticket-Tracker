@@ -1,1 +1,73 @@
 @use '../../../assets/sass/variables' as *;
+
+.searchUser{
+
+    &__expand {
+        border: none;
+        width: 170px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: $color-blue;
+        color: $color-white;
+        margin: 10px;
+        font-size: $font-size-medium;
+        box-shadow: rgba(36, 36, 36, 0.4) 0px 5px 15px;
+        transition: 500ms;
+
+        &:hover {
+            box-shadow: rgba(36, 36, 36, 0.7) 0px 5px 15px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+
+        .searchUser__close {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            color: $color-red;
+        }
+
+        .searchUser__name {
+            margin: 2px;
+            font-size: $font-size-small;
+            border-radius: 5px;
+            padding: 3px;
+            width: 300px;
+        }
+    
+        .searchUser__job {
+            margin: 2px;
+            font-size: $font-size-small;
+            border-radius: 5px;
+            padding: 3px;
+            width: 300px;
+        }
+    
+        .searchUser__create {
+            border: none;
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: $color-blue;
+            color: $color-white;
+            margin: 5px;
+            font-size: $font-size-small;
+            box-shadow: rgba(36, 36, 36, 0.4) 0px 5px 15px;
+            transition: 500ms;
+    
+            &:hover {
+                box-shadow: rgba(36, 36, 36, 0.7) 0px 5px 15px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .searchUser{
+        padding: 0 75px;
+    }
+}

@@ -3,5 +3,27 @@
 .header {
     padding: 30px;
     text-align: center;
-    font-size: $font-size-large;
+    font-size: $font-size-medium;
+
+    &__buttons {
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        font-size: $font-size-large;
+
+        &__buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .header__buttons {
+        justify-content: space-around;
+    }
 }

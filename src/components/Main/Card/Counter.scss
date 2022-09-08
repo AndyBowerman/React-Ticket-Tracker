@@ -36,5 +36,10 @@
         margin: 20px;
         font-size: $font-size-medium;
         box-shadow: rgba(36, 36, 36, 1) 0px 5px 15px;
+        transition: 500ms;
+
+        &:hover {
+            background-color: $color-hover;
+        }
     }
 }

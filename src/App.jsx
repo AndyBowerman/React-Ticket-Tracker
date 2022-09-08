@@ -1,6 +1,6 @@
 import './App.scss';
-import Header from './components/Header';
-import Main from './components/Main';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
 import team from './assets/data/team';
 import codingImg from './assets/images/coding-img.jpg';
 

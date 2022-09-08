@@ -49,5 +49,35 @@ const team = [
       name: "Phillip Mitchell",
       role: "Hard Man"
     },
+    {
+      id: 11,
+      name: "Effie Mohamed",
+      role: "Software Developer"
+    },
+    {
+      id: 12,
+      name: "Karam Lees",
+      role: "Senior Software Developer"
+    },
+    {
+      id: 13,
+      name: "Eleanor Dowling",
+      role: "Project Manager"
+    },
+    {
+      id: 14,
+      name: "Haris Grey",
+      role: "Tester"
+    },
+    {
+      id: 15,
+      name: "Sohaib Farley",
+      role: "Tester"
+    },
+    {
+      id: 16,
+      name: "Phillip Mitchell",
+      role: "Hard Man"
+    },
   ]
   export default team;

@@ -25,10 +25,11 @@
         align-items:center;
 
         .searchUser__close {
-            width: 90%;
-            display: flex;
-            justify-content: center;
+            background-color: none;
             color: $color-red;
+            font-weight: bold;
+            padding: 5px;
+            margin: 5px;
         }
 
         .searchUser__name {

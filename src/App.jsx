@@ -7,33 +7,27 @@ import { useState } from 'react';
 
 const App = () => {
 
-  let [data, setData] = useState([...team]);
+  const [data, setData] = useState([...team]);
 
   const createUser = (userName, jobTitle) => {
     setData([...data, {id: data.length + 1, name: userName, role: jobTitle}])
   }
 
-  const searchUser = (userName, jobTitle) => {
-    setData([...data].filter(employee => {
-      if(userName && jobTitle) {
-        if(employee.name.toLowerCase() == userName.toLowerCase() && jobTitle.toLowerCase() == employee.role.toLowerCase()) {
-          return employee;
-        }
-      } else if(userName) {
-        if(employee.name.toLowerCase() == userName) {
-          return employee;
-        }
-      } else if(jobTitle) {
-        if(employee.role.toLowerCase() == jobTitle.toLowerCase()) {
-          return employee;
-        }
-      }
+  const searchByName = (userName) => {
+    setData(data.filter(employee => {
+      return employee.name.toLowerCase().includes(userName.toLowerCase());
+    }))
+  }
+
+  const searchByJob = (jobTitle) => {
+    setData(data.filter(employee => {
+      return employee.role.toLowerCase().includes(jobTitle.toLowerCase());
     }))
   }
 
   return (
     <div className="app">
-      <Header createUser={createUser} searchUser={searchUser} />
+      <Header createUser={createUser} searchByName={searchByName} searchByJob={searchByJob} />
       <Main teamInfo={data} img={codingImg} />
     </div>
   );

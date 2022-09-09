@@ -5,14 +5,14 @@ import SearchUser from './SearchUser/SearchUser';
 
 const Header = (props) => {
 
-  const {createUser, searchUser} = props;
+  const {createUser, searchByName, searchByJob} = props;
 
   return (
     <header className='header'>
         <h1 className="header__text">Ticket Tracker</h1>
         <div className='header__buttons'>
           <AddUser createUser={createUser} />
-          <SearchUser searchUser={searchUser} />
+          <SearchUser searchByName={searchByName} searchByJob={searchByJob} />
         </div>
     </header>
   )

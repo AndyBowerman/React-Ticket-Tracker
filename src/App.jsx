@@ -14,15 +14,23 @@ const App = () => {
   }
 
   const searchByName = (userName) => {
-    setData(data.filter(employee => {
-      return employee.name.toLowerCase().includes(userName.toLowerCase());
-    }))
+    if(userName.length > 1) {
+      setData(data.filter(employee => {
+        return employee.name.toLowerCase().includes(userName.toLowerCase());
+      }))
+    } else {
+      setData([...team])
+    }
   }
 
   const searchByJob = (jobTitle) => {
-    setData(data.filter(employee => {
-      return employee.role.toLowerCase().includes(jobTitle.toLowerCase());
-    }))
+    if(jobTitle.length > 1) {
+      setData(data.filter(employee => {
+        return employee.role.toLowerCase().includes(jobTitle.toLowerCase());
+      }))
+    } else {
+      setData([...team])
+    }
   }
 
   return (

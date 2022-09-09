@@ -1,31 +1,44 @@
 import React, { useState } from 'react';
 import './AddUser.scss';
 
-const AddUser = (props) => {
+const AddUser = ({createUser}) => {
 
-  const {createUser} = props;
-
-  // Expand and hide the input boxes.
   let [expandAddUser, setExpandAddUser] = useState(false);
+  let [userName, setUserName] = useState('');
+  let [jobTitle, setJobTitle] = useState('');
+
   const handleAddUserClick = () => setExpandAddUser(!expandAddUser);
 
-  // Handle the data entered
-  let [userName, setUserName] = useState('');
-  const handleNameEntry = (e) => setUserName(e.target.value);
-  let [jobTitle, setJobTitle] = useState('');
-  const handleJobEntry = (e) => setJobTitle(e.target.value);
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createUser(userName, jobTitle);
+    setUserName('');
+    setJobTitle('');
+  }
 
   return (
     <div className="addUser">
         {!expandAddUser && <button className="addUser__expand" onClick={handleAddUserClick}>Add New User</button>}
         {expandAddUser && <div className="addUser__container">
-            <div className="addUser__close">
-                <p className="addUser__close--text" onClick={handleAddUserClick}>X</p>
-            </div>
-            <input type="text" placeholder="Enter Name" className="addUser__name" onChange={handleNameEntry} />
-            <input type="text" placeholder='Job Title' className="addUser__job" onChange={handleJobEntry} />
-            <button className='addUser__create' onClick={() => createUser(userName, jobTitle)}>Create New User</button>
+            <button className="addUser__close" onClick={handleAddUserClick}>Close</button>
+            <form action="#" className='addUser__form' onSubmit={handleSubmit}>
+              <input 
+                type="text"
+                placeholder="Enter Name"
+                className="addUser__input"
+                onChange={(e) => setUserName(e.target.value)}
+                value={userName}
+              />
+              <input
+                type="text"
+                placeholder='Job Title'
+                className="addUser__input"
+                onChange={(e) => setJobTitle(e.target.value)}
+                value={jobTitle}
+              />
+              <button type="submit" className='addUser__create'>Create New User</button>
+            </form>
+            
         </div>}
     </div>
   )
